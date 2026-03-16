@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registracija</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registracija</h2>
+        <form action="/" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="ime">Ime:</label>
+            <input type="text" id="ime" name="ime" required>
+
+            <label for="drzava">Kratica države (npr. SI, DE, FR):</label>
+            <input type="text" id="drzava" name="drzava" required>
+
+            <label for="geslo">Geslo:</label>
+            <input type="password" id="geslo" name="geslo" required>
+
+            <button type="submit">Registriraj se</button>
+        </form>
+
+        {% if message %}
+            <div class="message">{{ message }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
